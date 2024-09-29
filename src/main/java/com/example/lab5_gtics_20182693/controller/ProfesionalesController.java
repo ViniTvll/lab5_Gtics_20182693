@@ -19,8 +19,10 @@ public class ProfesionalesController {
     List<Profesionales> profesionales = new ArrayList<>();
 
     @GetMapping("/profesionales")
-    public String listarProfesionales(Model model) {
-        model.addAttribute("profesionales", profesionales);
+    public String listarProfesionales(
+
+            Model model) {
+        model.addAttribute("profesionales", profesionalesRepository.findAll());
         return "profesionales";
     }
 }

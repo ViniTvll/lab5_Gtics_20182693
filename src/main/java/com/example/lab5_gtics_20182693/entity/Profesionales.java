@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "profesionales")
 @Getter
@@ -30,5 +32,10 @@ public class Profesionales {
     @ManyToOne
     @JoinColumn(name = "idSede", nullable = false)
     private Sedes sede;
+
+    @OneToMany(mappedBy = "profesional", cascade = CascadeType.ALL)
+    private List<Fechas> fechaDisponibilidad;
+
+
 }
 
