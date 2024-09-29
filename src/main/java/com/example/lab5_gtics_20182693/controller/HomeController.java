@@ -6,10 +6,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @GetMapping("")
-    public String inicio(){
 
-        return "navbar";
+
+    @GetMapping("/citas")
+    public String citas() {
+        return "citas";
     }
+
+    @GetMapping("/pacientes")
+    public String pacientes() {
+        return "pacientes";
+    }
+
+    @GetMapping("/foro")
+    public String foro() {
+        return "foro";
+    }
+
+    @GetMapping("/recursos")
+    public String recursos() {
+        return "recursos";
+    }
+
+
 
 }
